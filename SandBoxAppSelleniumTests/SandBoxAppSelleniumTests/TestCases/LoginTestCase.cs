@@ -11,7 +11,7 @@ namespace SandBoxAppSelleniumTests.TestCases
     public class LoginTestCase : TestConfig
     {
         [Test]
-        [Category("LogIn&LogOut")]
+        [Category("Log In & Log Out")]
         public static void LoginFromLoginPage()
         {
             LoginPage.Instance.GoToLoginPage();

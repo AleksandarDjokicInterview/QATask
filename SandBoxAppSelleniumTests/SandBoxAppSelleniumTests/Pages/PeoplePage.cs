@@ -12,19 +12,22 @@ namespace SandBoxAppSelleniumTests.Pages
     {
         #region XPathValues
         public string createPersonXPath = "//a[contains(@class,'btn mb-4 btn-primary float-right')]";
-
+        public string personXPath = "//a[@class='list-group-item list-group-item-action']";
         #endregion
 
         #region WebElements
         public IWebElement CreatePersonButton { get { return FindElement(By.XPath(createPersonXPath), 15); } }
+        public IReadOnlyCollection<IWebElement> People { get { return FindElements(By.XPath(personXPath), 15); } }
+    
+#endregion
 
-        #endregion
-
-        #region Methods
+#region Methods
         public void GoToPeoplePage()
         {
             WrappedDriver.Navigate().GoToUrl(Constants.PEOPLE);
         }
+
+       
 
         public void CreateNewPerson()
         {

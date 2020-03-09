@@ -37,5 +37,24 @@ namespace SandBoxAppSelleniumTests.TestCases
             CreatePersonPage.Instance.CreateNewPerson();
 
         }
+
+
+        [Test]
+        [Category("Delete All People")]
+        public static void DeleteAllPeopleTests()
+        {
+            PeoplePage.Instance.GoToPeoplePage();
+            var People = PeoplePage.Instance.People;                       
+            foreach (var p in People)
+            {
+                p.Click();
+                EditPersonPage.Instance.DeletePerson();
+                EditPersonPage.Instance.ConfirmDeletePerson();
+            }
+
+        }
+
+
+
     }
 }
